@@ -31,6 +31,8 @@ module.exports.test = function (description, result) {
 
 	failed = failed || !result
 	console.log(result ? '\x1b[32m'+'v'+'\x1b[0m' : '\x1b[31m'+'x'+'\x1b[0m', '\x1b[2m'+description+'\x1b[0m')
+
+	return result
 }
 
 module.exports.over = function () {

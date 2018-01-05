@@ -11,8 +11,7 @@ $ npm install juzt
 
 ## Usage
 
-**juzt** tests take two arguments: a description string and a boolean expression.
-A test will pass if the expression evaluates to true and fail if it evaluates to false
+**juzt** tests only take two arguments: a description string and a boolean expression that will fail the test if it evaluates to false.
 
 ```javascript
 const juzt = require('juzt')
@@ -35,12 +34,14 @@ juzt.test('evaluates to false', false)
 juzt.test('evaluates to false', !b)
 juzt.test('evaluates to false', !'test')
 
-// these tests throw an error:
+// these tests will throw an error:
 
 juzt.test('not a boolean', a)
 juzt.test('not a boolean', 1)
 juzt.test('not a boolean', 0)
 juzt.test(3, true)
+juzt.test(true)
+juzt.test()
 
 // end testing
 

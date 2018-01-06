@@ -11,7 +11,7 @@ $ npm install juzt
 
 ## Usage
 
-**juzt** tests only take two arguments: a description string and a boolean expression that will fail the test if it evaluates to false.
+**juzt** tests take only two arguments: a description string and a boolean expression that will fail the test if it evaluates to false.
 
 ```javascript
 const juzt = require('juzt')

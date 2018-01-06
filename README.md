@@ -42,7 +42,7 @@ juzt.test('evaluates to false', !'test')
 
 let ee = false
 try { a + b } catch (err) { ee = err }
-juzt.test('this should not be an error', ee instanceof Error)
+juzt.test('is this an error? (no! this test will fail)', ee instanceof Error)
 
 // these tests will throw an error:
 

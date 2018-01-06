@@ -37,12 +37,12 @@ tests.fail.push(
 // these tests will throw an error:
 
 tests.error.push(
-	function () { let r; try { juzt.test('not a boolean', a) } catch (err) { r = err } finally { return r } }(),
-	function () { let r; try { juzt.test('not a boolean', 1) } catch (err) { r = err } finally { return r } }(),
-	function () { let r; try { juzt.test('not a boolean', 0) } catch (err) { r = err } finally { return r } }(),
-	function () { let r; try { juzt.test(3, true) } catch (err) { r = err } finally { return r } }(),
-	function () { let r; try { juzt.test(true) } catch (err) { r = err } finally { return r } }(),
-	function () { let r; try { juzt.test() } catch (err) { r = err } finally { return r } }()
+	(function () { let r; try { juzt.test('not a boolean', a) } catch (err) { r = err } finally { return r } })(),
+	(function () { let r; try { juzt.test('not a boolean', 1) } catch (err) { r = err } finally { return r } })(),
+	(function () { let r; try { juzt.test('not a boolean', 0) } catch (err) { r = err } finally { return r } })(),
+	(function () { let r; try { juzt.test(3, true) } catch (err) { r = err } finally { return r } })(),
+	(function () { let r; try { juzt.test(true) } catch (err) { r = err } finally { return r } })(),
+	(function () { let r; try { juzt.test() } catch (err) { r = err } finally { return r } })()
 )
 
 juzt = reload('./../juzt')

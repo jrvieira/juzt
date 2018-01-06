@@ -36,16 +36,22 @@ module.exports.test = function (description, result) {
 	return result
 }
 
+let over = false
+
 module.exports.over = function () {
 
-	if (testresults.length === 0) {
-		console.log('\x1b[2m'+'no tests to perform'+'\x1b[0m', '\n')
-	} else {
-		for (testresult of testresults) {
-			console.log(...testresult)
+	if (over === false) {
+		if (testresults.length === 0) {
+			console.log('\x1b[2m'+'no tests to perform'+'\x1b[0m', '\n')
+		} else {
+			for (testresult of testresults) {
+				console.log(...testresult)
+			}
+			console.log('\n', failed ? '\x1b[31m'+'test failed'+'\x1b[0m' : '\x1b[32m'+'all tests passed'+'\x1b[0m', '\n')
 		}
-		console.log('\n', failed ? '\x1b[31m'+'test failed'+'\x1b[0m' : '\x1b[32m'+'all tests passed'+'\x1b[0m', '\n')
 	}
+	
+	over = true
 
 	return process.exitCode = failed
 }

@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 let failed = false
+let testresults = []
 
 module.exports.test = function (description, result) {
 	// validate test arguments
@@ -30,13 +31,21 @@ module.exports.test = function (description, result) {
 	if (typeof result != 'boolean') throw new TypeError('test result is not a boolean')
 
 	failed = failed || !result
-	console.log(result ? '\x1b[32m'+'v'+'\x1b[0m' : '\x1b[31m'+'x'+'\x1b[0m', '\x1b[2m'+description+'\x1b[0m')
+	testresults.push([result ? '\x1b[32m'+'v'+'\x1b[0m' : '\x1b[31m'+'x'+'\x1b[0m' , '\x1b[2m'+description+'\x1b[0m'])
 
 	return result
 }
 
 module.exports.over = function () {
-	console.log('\n', failed ? '\x1b[31m'+'test failed'+'\x1b[0m' : '\x1b[32m'+'all tests passed'+'\x1b[0m', '\n')	
-}
 
-process.exitCode = failed
+	if (testresults.length == 0) {
+		console.log('\x1b[2m'+'no tests to perform'+'\x1b[0m', '\n')
+	} else {
+		for (testresult of testresults) {
+			console.log(...testresult)
+		}
+		console.log('\n', failed ? '\x1b[31m'+'test failed'+'\x1b[0m' : '\x1b[32m'+'all tests passed'+'\x1b[0m', '\n')
+	}
+
+	return process.exitCode = failed
+}

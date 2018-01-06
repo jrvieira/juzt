@@ -17,7 +17,7 @@ let tests = {
 let a = 1
 let b = 2
 tests.pass.push(
-	juzt.test('sum of a and b is 3', a + b == 3),
+	juzt.test('sum of a and b is 3', a + b === 3),
 	juzt.test('this test passes', true),
 	juzt.test('', true),
 	juzt.test('boolean expression', !!a),
@@ -36,7 +36,7 @@ if (tests.pass.push(juzt.test('this should throw an error', e instanceof Error))
 
 b = 1
 tests.fail.push(
-	juzt.test('sum of a and b is 3', a + b == 3),
+	juzt.test('sum of a and b is 3', a + b === 3),
 	juzt.test('evaluates to false', false),
 	juzt.test('evaluates to false', !b),
 	juzt.test('evaluates to false', !'test')

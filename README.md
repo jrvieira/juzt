@@ -20,7 +20,7 @@ const juzt = require('juzt')
 
 let a = 1
 let b = 2
-juzt.test('sum of a and b is 3', a + b == 3)
+juzt.test('sum of a and b is 3', a + b === 3)
 juzt.test('this test passes', true)
 juzt.test('', true)
 juzt.test('boolean expression', !!a)
@@ -35,7 +35,7 @@ if ( juzt.test('this should be an error', e instanceof Error) ) {
 // these tests will fail:
 
 b = 1
-juzt.test('sum of a and b is 3', a + b == 3)
+juzt.test('sum of a and b is 3', a + b === 3)
 juzt.test('evaluates to false', false)
 juzt.test('evaluates to false', !b)
 juzt.test('evaluates to false', !'test')

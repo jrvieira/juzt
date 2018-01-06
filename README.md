@@ -26,6 +26,10 @@ juzt.test('', true)
 juzt.test('boolean expression', !!a)
 juzt.test('boolean expression', !!'test')
 
+let e = false
+try { throwanerror() } catch (err) { e = err }
+if ( juzt.test('this should be an error', e instanceof Error) ) juzt.test('with the correct type and message', e.name === 'ReferenceError' && e.message === 'throwanerror is not defined')
+
 // these tests will fail:
 
 b = 1
@@ -33,6 +37,10 @@ juzt.test('sum of a and b is 3', a + b == 3)
 juzt.test('evaluates to false', false)
 juzt.test('evaluates to false', !b)
 juzt.test('evaluates to false', !'test')
+
+let ee = false
+try { a + b } catch (err) { ee = err }
+juzt.test('this should not be an error', ee instanceof Error)
 
 // these tests will throw an error:
 

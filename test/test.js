@@ -1,5 +1,5 @@
 // import juzt from 'juzt'
-let juzt = require('juzt')
+let juzt = require('../juzt')
 
 function reload (module) {
 	delete require.cache[require.resolve(module)]

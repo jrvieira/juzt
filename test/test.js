@@ -24,7 +24,7 @@ tests.pass.push(
 	juzt.test('boolean expression', !!'test')
 )
 
-let e = false
+let e = null
 try { throwanerror() } catch (err) { e = err }
 if (tests.pass.push(juzt.test('this should throw an error', e instanceof Error))) {
 	tests.pass.push(
@@ -42,7 +42,7 @@ tests.fail.push(
 	juzt.test('evaluates to false', !'test')
 )
 
-let ee = false
+let ee = null
 try { a + b } catch (err) { ee = err }
 tests.fail.push(
 	juzt.test('is this an error? (no! this test will fail)', ee instanceof Error)
@@ -51,12 +51,12 @@ tests.fail.push(
 // these tests will throw an error:
 
 tests.error.push(
-	(function () { let r; try { juzt.test('not a boolean', a) } catch (err) { r = err } finally { return r } })(),
-	(function () { let r; try { juzt.test('not a boolean', 1) } catch (err) { r = err } finally { return r } })(),
-	(function () { let r; try { juzt.test('not a boolean', 0) } catch (err) { r = err } finally { return r } })(),
-	(function () { let r; try { juzt.test(3, true) } catch (err) { r = err } finally { return r } })(),
-	(function () { let r; try { juzt.test(true) } catch (err) { r = err } finally { return r } })(),
-	(function () { let r; try { juzt.test() } catch (err) { r = err } finally { return r } })()
+	(function () { let r = null; try { juzt.test('not a boolean', a) } catch (err) { r = err } finally { return r } })(),
+	(function () { let r = null; try { juzt.test('not a boolean', 1) } catch (err) { r = err } finally { return r } })(),
+	(function () { let r = null; try { juzt.test('not a boolean', 0) } catch (err) { r = err } finally { return r } })(),
+	(function () { let r = null; try { juzt.test(3, true) } catch (err) { r = err } finally { return r } })(),
+	(function () { let r = null; try { juzt.test(true) } catch (err) { r = err } finally { return r } })(),
+	(function () { let r = null; try { juzt.test() } catch (err) { r = err } finally { return r } })()
 )
 
 juzt = reload('./../juzt')

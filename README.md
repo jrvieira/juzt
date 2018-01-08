@@ -26,7 +26,7 @@ juzt.test('', true)
 juzt.test('boolean expression', !!a)
 juzt.test('boolean expression', !!'test')
 
-let e = false
+let e = null
 try { throwanerror() } catch (err) { e = err }
 if ( juzt.test('this should be an error', e instanceof Error) ) {
 	juzt.test('with the correct type and message', e.name === 'ReferenceError' && e.message === 'throwanerror is not defined')
@@ -40,7 +40,7 @@ juzt.test('evaluates to false', false)
 juzt.test('evaluates to false', !b)
 juzt.test('evaluates to false', !'test')
 
-let ee = false
+let ee = null
 try { a + b } catch (err) { ee = err }
 juzt.test('is this an error? (no! this test will fail)', ee instanceof Error)
 

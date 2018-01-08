@@ -45,7 +45,7 @@ tests.fail.push(
 let ee = null
 try { a + b } catch (err) { ee = err }
 tests.fail.push(
-	juzt.test('is this an error? (no! this test will fail)', ee instanceof Error)
+	juzt.test('is this an error? (no, this test will fail)', ee instanceof Error)
 )
 
 // these tests will throw an error:

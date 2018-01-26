@@ -59,7 +59,7 @@ juzt.test()
 juzt.over()
 ```
 
-run
+Run
 ```shell
 node yourtest.js
 ```

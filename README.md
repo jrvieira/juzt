@@ -1,5 +1,5 @@
 # juzt
-Minimal .js unit testing
+minimal .js unit testing
 
 
 ## Installation
@@ -59,7 +59,7 @@ juzt.test()
 juzt.over()
 ```
 
-Run
+run
 ```shell
 node yourtest.js
 ```

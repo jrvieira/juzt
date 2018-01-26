@@ -1,5 +1,5 @@
 // import juzt from 'juzt'
-let juzt = require('../juzt')
+let juzt = require('../lib/juzt')
 
 function reload (module) {
 	delete require.cache[require.resolve(module)]
@@ -59,7 +59,7 @@ tests.error.push(
 	(function () { let r = null; try { juzt.test() } catch (err) { r = err } finally { return r } })()
 )
 
-juzt = reload('./../juzt')
+juzt = reload('../lib/juzt')
 
 juzt.test('all passing tests passed', tests.pass.every(result => result === true))
 juzt.test('all failing tests failed', tests.fail.every(result => result === false))

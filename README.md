@@ -11,7 +11,7 @@ $ npm install juzt
 
 ## Usage
 
-**juzt** tests take only two arguments: a description string and a boolean expression that will fail the test if it evaluates to false.
+**juzt** tests take only two arguments: a description string and a boolean expression that will fail the test if it evaluates to false, returning true on pass and false on fail.
 
 ```javascript
 const juzt = require('juzt')
@@ -28,6 +28,7 @@ juzt.test('boolean expression', !!'test')
 
 let e = null
 try { throwanerror() } catch (err) { e = err }
+// just tests return true on pass and false on fail
 if ( juzt.test('this should be an error', e instanceof Error) ) {
 	juzt.test('with the correct type and message', e.name === 'ReferenceError' && e.message === 'throwanerror is not defined')
 }
@@ -44,7 +45,7 @@ let ee = null
 try { a + b } catch (err) { ee = err }
 juzt.test('is this an error? (no! this test will fail)', ee instanceof Error)
 
-// these tests will throw an error:
+// these will throw an error:
 
 juzt.test('not a boolean', a)
 juzt.test('not a boolean', 1)
@@ -63,6 +64,5 @@ Run
 node yourtest.js
 ```
 
-Useful for testing modules with [`npm test`](https://docs.npmjs.com/cli/test)
 
 ###### Licensed under MIT

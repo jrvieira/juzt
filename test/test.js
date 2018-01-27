@@ -1,3 +1,9 @@
+/*
+
+How useful can a unit test library be in testing itself?
+
+*/
+
 // import juzt from 'juzt'
 let juzt = require('../lib/juzt')
 

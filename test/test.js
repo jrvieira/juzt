@@ -54,7 +54,7 @@ tests.fail.push(
 	juzt.test('is this an error? (no, this test will fail)', ee instanceof Error)
 )
 
-// these tests will throw an error:
+// these will throw an error:
 
 tests.error.push(
 	(function () { let r = null; try { juzt.test('not a boolean', a) } catch (err) { r = err } finally { return r } })(),

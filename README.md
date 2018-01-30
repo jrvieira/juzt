@@ -1,5 +1,5 @@
 # juzt
-Minimal .js unit testing
+minimal .js unit testing
 
 
 ## Installation

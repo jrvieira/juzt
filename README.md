@@ -1,5 +1,5 @@
 # juzt
-very simple js unit testing
+Very simple js unit testing.
 
 
 ## Installation

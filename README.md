@@ -14,13 +14,12 @@ $ npm install juzt
 write descriptive tests that evaluate to true
 
 ```javascript
-const juzt = require('juzt')
-
 /*
-
-juzt tests take only two arguments: a description string and a boolean expression
-
+juzt tests take only two arguments:
+a description string and a boolean expression
 */
+
+const juzt = require('juzt')
 
 // these tests will pass:
 

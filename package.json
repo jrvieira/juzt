@@ -4,7 +4,8 @@
   "description": "Minimal .js unit testing",
   "main": "lib/juzt.js",
   "files": [
-    "lib/juzt.js"
+    "lib/juzt.js",
+    "test/test.js"
   ],
   "directories": {
     "lib": "lib",

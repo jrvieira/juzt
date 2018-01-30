@@ -1,6 +1,6 @@
 {
   "name": "juzt",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "very simple js unit testing",
   "main": "lib/juzt.js",
   "files": [

@@ -1,5 +1,5 @@
 # juzt
-Very simple js unit testing.
+very simple js unit testing
 
 
 ## Installation
@@ -11,7 +11,7 @@ $ npm install juzt
 
 ## Usage
 
-Write descriptive tests that evaluate to true.
+write descriptive tests that evaluate to true
 
 ```javascript
 const juzt = require('juzt')
@@ -65,7 +65,7 @@ juzt.test()
 juzt.over()
 ```
 
-Run
+run
 ```shell
 node yourtest.js
 ```

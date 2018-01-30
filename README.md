@@ -1,5 +1,5 @@
 # juzt
-minimal .js unit testing
+very simple unit testing
 
 
 ## Installation
@@ -11,7 +11,7 @@ $ npm install juzt
 
 ## Usage
 
-**juzt** tests take only two arguments: a description string and a boolean expression that will fail the test if it evaluates to false, returning true on pass and false on fail.
+**juzt** tests take only two arguments: a description string and a boolean expression.
 
 ```javascript
 const juzt = require('juzt')

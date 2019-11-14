@@ -41,20 +41,20 @@ if ( juzt.test('this should be an error', e instanceof Error) ) {
 // these tests will fail:
 
 b = 1
-juzt.test('sum of a and b is not 3', a + b === 3)
+juzt.test('is the sum of a and b 3?', a + b === 3)
 juzt.test('evaluates to false', false)
 juzt.test('evaluates to false', !b)
 juzt.test('evaluates to false', !'test')
 
 let ee = null
 try { a + b } catch (err) { ee = err }
-juzt.test('is this an error? (no! this test will fail)', ee instanceof Error)
+juzt.test('is this an error?', ee instanceof Error)
 
 // these will throw an error:
 
-juzt.test('not a boolean', a)
-juzt.test('not a boolean', 1)
-juzt.test('not a boolean', 0)
+juzt.test('second argument must be boolean', a)
+juzt.test('second argument must be boolean', 1)
+juzt.test('second argument must be boolean', 0)
 juzt.test(3, true)
 juzt.test(true)
 juzt.test()

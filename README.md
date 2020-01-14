@@ -34,7 +34,7 @@ juzt.test('boolean expression', !!'test')
 let e = null
 try { throwanerror() } catch (err) { e = err }
 // juzt tests return true on pass and false on fail
-if ( juzt.test('this should be an error', e instanceof Error) ) {
+if ( juzt.test('e should be an error', e instanceof Error) ) {
 	juzt.test('with the correct type and message', e.name === 'ReferenceError' && e.message === 'throwanerror is not defined')
 }
 
